@@ -1,0 +1,9 @@
+title: Dive Skip
+originalAuthor: Lux
+description: Makes dives optional.
+assets:
+#Lua Script
+- name: scripts/DiveSkip.lua
+  method: copy
+  source:
+  - name: DiveSkip.lua
