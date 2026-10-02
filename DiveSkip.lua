@@ -63,23 +63,51 @@ function GameVersion()
 end
 
 function SetWorldProg()
-	if ReadByte(Story.TWTNW.Sora[_gameVer]+0x01) == 0x00 then --Mod is not active
+	if ReadByte(Story.TWTNW.Sora[_gameVer]+0x01) == 0x00 then --TWTNW hasn't ever been visited; Mod is not active
 		--Set initial story progression
-		WriteShort(Story.TT.Sora[_gameVer], 0x0101)
-		WriteShort(Story.LCDC.Sora[_gameVer], 0x0101)
-		WriteShort(Story.TG.Sora[_gameVer], 0x0101)
-		WriteShort(Story.PP.Sora[_gameVer], 0x0101)
-		WriteShort(Story.COTM.Sora[_gameVer], 0x0101)
-		WriteShort(Story.SOS.Sora[_gameVer], 0x0101)
-		WriteShort(Story.TWTNW.Sora[_gameVer], 0x0101)
+		if ReadShort(Story.TT.Sora[_gameVer]) < 0x0101 then
+			WriteShort(Story.TT.Sora[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.LCDC.Sora[_gameVer]) < 0x0101 then
+			WriteShort(Story.LCDC.Sora[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.TG.Sora[_gameVer]) < 0x0101 then
+			WriteShort(Story.TG.Sora[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.PP.Sora[_gameVer]) < 0x0101 then
+			WriteShort(Story.PP.Sora[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.COTM.Sora[_gameVer]) < 0x0101 then
+			WriteShort(Story.COTM.Sora[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.SOS.Sora[_gameVer]) < 0x0101 then
+			WriteShort(Story.SOS.Sora[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.TWTNW.Sora[_gameVer]) < 0x0101 then
+			WriteShort(Story.TWTNW.Sora[_gameVer], 0x0101)
+		end
 
-		WriteShort(Story.TT.Riku[_gameVer], 0x0101)
-		WriteShort(Story.LCDC.Riku[_gameVer], 0x0101)
-		WriteShort(Story.TG.Riku[_gameVer], 0x0101)
-		WriteShort(Story.PP.Riku[_gameVer], 0x0101)
-		WriteShort(Story.COTM.Riku[_gameVer], 0x0101)
-		WriteShort(Story.SOS.Riku[_gameVer], 0x0101)
-		WriteShort(Story.TWTNW.Riku[_gameVer], 0x0101)
+		if ReadShort(Story.TT.Riku[_gameVer]) < 0x0101 then
+			WriteShort(Story.TT.Riku[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.LCDC.Riku[_gameVer]) < 0x0101 then
+			WriteShort(Story.LCDC.Riku[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.TG.Riku[_gameVer]) < 0x0101 then
+			WriteShort(Story.TG.Riku[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.PP.Riku[_gameVer]) < 0x0101 then
+			WriteShort(Story.PP.Riku[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.COTM.Riku[_gameVer]) < 0x0101 then
+			WriteShort(Story.COTM.Riku[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.SOS.Riku[_gameVer]) < 0x0101 then
+			WriteShort(Story.SOS.Riku[_gameVer], 0x0101)
+		end
+		if ReadShort(Story.TWTNW.Riku[_gameVer]) < 0x0101 then
+			WriteShort(Story.TWTNW.Riku[_gameVer], 0x0101)
+		end
 	end
 end
 
